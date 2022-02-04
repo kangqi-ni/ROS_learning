@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"/>
+    <node pkg="turtle_control" type ="turtle_control_spawn_client" name="new_turtle1" args="turtle2"/>
+    <node pkg="turtle_control" type ="turtle_control_spawn_client" name="new_turtle2" args="turtle3"/>
+
+    <node pkg="turtle_control" type="turtle_control_velocity_server" name="turtle_control_velocity_server" output="screen"/>
+    <node pkg="turtle_control" type="turtle_control_velocity_client" name="turtle_control_velocity_client" args="turtle1 start 2 1.8" output="screen"/>
+</launch>

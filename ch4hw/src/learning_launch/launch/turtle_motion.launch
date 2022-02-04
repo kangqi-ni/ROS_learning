@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"/>
+    <node pkg="turtle_motion" type="turtle_velocity_publisher" name="turtle_velocity_publisher"/>
+    <node pkg="turtle_motion" type="turtle_position_subscriber" name="turtle_position_subscriber"/>
+</launch>
