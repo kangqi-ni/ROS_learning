@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find my_robot_gazebo)/launch/view_my_robot_kinect_gazebo.launch"/>
+
+    <include file="$(find object_detection_robot)/launch/usb_cam_detection.launch"/>
+
+    <node pkg="object_detection_robot" name="object_detection_robot" type="object_detection_robot" output="screen"/>
+</launch>
