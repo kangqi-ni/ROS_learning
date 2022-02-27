@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/kevin/Documents/drone/devel/include/**",
+        "/home/kevin/Documents/ROS/ch7/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/kevin/Documents/drone/src/darknet_ros/darknet_ros/include/**",
+        "/home/kevin/Documents/drone/src/iq_gnc/include/**",
+        "/home/kevin/Documents/drone/src/mavros/libmavconn/include/**",
+        "/home/kevin/Documents/drone/src/mavros/mavros/include/**",
+        "/home/kevin/Documents/drone/src/mavros/mavros_msgs/include/**",
+        "/home/kevin/Documents/ROS/ch8/src/robot_voice/include/**",
+        "/home/kevin/Documents/drone/src/mavros/test_mavros/include/**",
+        "/home/kevin/Documents/ROS/ch7/src/vision_msgs/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
