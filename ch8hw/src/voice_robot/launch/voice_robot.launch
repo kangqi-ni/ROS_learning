@@ -1,0 +1,9 @@
+<launch>
+    <include file="$(find my_robot_gazebo)/launch/view_my_robot_kinect_gazebo.launch"/>
+
+    <node name="iat_publish" pkg="voice_robot" type="iat_publish" output="screen"/>
+
+    <node name="voice_robot" pkg="voice_robot" type="voice_robot" output="screen"/>
+
+    <node name="voice_assistant" pkg="voice_robot" type="voice_assistant" output="screen"/>
+</launch>

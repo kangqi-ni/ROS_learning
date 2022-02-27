@@ -136,6 +136,13 @@ int text_to_speech(const char* src_text, const char* des_path, const char* param
 	return ret;
 }
 
+std::string to_string(int val) 
+{
+    char buf[20];
+    sprintf(buf, "%d", val);
+    return std::string(buf);
+}
+
 void voiceWordsCallback(const std_msgs::String::ConstPtr& msg)
 {
     char cmd[2000];
@@ -145,7 +152,36 @@ void voiceWordsCallback(const std_msgs::String::ConstPtr& msg)
     const char* filename             = "tts_sample.wav"; //合成的语音文件名称
 
     std::cout<<"I heard :"<<msg->data.c_str()<<std::endl;
-    text = msg->data.c_str(); 
+
+    std::string dataString = msg->data;
+    if(dataString.find("前") != std::string::npos)
+    {
+        char nameString[100] = "收到前进";
+        text = nameString;
+        std::cout<<text<<std::endl;
+    }
+    else if(dataString.find("后") != std::string::npos) 
+    {
+        char eageString[100] = "收到后退";
+        text = eageString;
+        std::cout<<text<<std::endl;
+    }
+    else if(dataString.find("左") != std::string::npos) 
+    {
+        char helpString[100] = "收到左转";
+        text = helpString;
+        std::cout<<text<<std::endl;
+    }
+    else if(dataString.find("右") != std::string::npos)
+    {
+        char helpString[100] = "收到右转";
+        text = helpString;
+        std::cout<<text<<std::endl;
+    }
+    else
+    {
+        text = msg->data.c_str();
+    }
 
     /* 文本合成 */
     printf("开始合成 ...\n");
@@ -199,7 +235,7 @@ int main(int argc, char* argv[])
 	printf("## 高效便捷手段，非常符合信息时代海量数据、动态更新和个性化查询的需求。  ##\n");
 	printf("###########################################################################\n\n");
 
-    ros::init(argc,argv,"TextToSpeech");
+    ros::init(argc,argv,"VoiceAssistant");
     ros::NodeHandle n;
     ros::Subscriber sub =n.subscribe("voiceWords", 1000, voiceWordsCallback);
     ros::spin();
