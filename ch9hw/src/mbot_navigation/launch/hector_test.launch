@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find my_robot_gazebo)/launch/view_my_robot_lidar_gazebo.launch"/>
+    
+    <include file="$(find mbot_navigation)/launch/hector_demo.launch"/>
+
+    <include file="$(find mbot_teleop)/launch/mbot_teleop.launch"/>
+</launch>
